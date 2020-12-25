@@ -1,7 +1,7 @@
 import * as reduxModule from 'redux';
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import createReducer from './reducers';
+import createReducer from './rootReducer';
 /*
 Fix for Firefox redux dev tools extension
 https://github.com/zalmoxisus/redux-devtools-instrument/pull/19#issuecomment-400637274
@@ -29,8 +29,6 @@ export const loadLocalStorage = () => {
 }
 
 const persistedState = loadLocalStorage();
-
-
 const enhancer = composeEnhancers(applyMiddleware(thunk));
 const store = createStore(createReducer(), persistedState, enhancer);
 
