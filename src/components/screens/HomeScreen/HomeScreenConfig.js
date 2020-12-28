@@ -2,7 +2,7 @@ import authRoles from "../../../config/authRoles";
 import HomeScreen from "./HomeScreen";
 
 const HomeScreenConfig = {
-    auth: authRoles.guest,
+    auth: authRoles.user,
     routes: [
         {
             path: "/",

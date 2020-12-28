@@ -4,7 +4,7 @@ import withReducer from '../../../store/withReducer';
 const HomeScreen = (props) => {
     const dispatch = useDispatch();
     return <div>
-        hello
+        hello home screen
     </div>
 }
 export default HomeScreen;

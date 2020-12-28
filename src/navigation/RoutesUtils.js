@@ -1,7 +1,10 @@
-export const generateRoutesFromConfigs = (configs) => {
-    let allRoutes = [];
+import authRoles from "../config/authRoles";
+
+export const generateRoutesFromConfigs = (configs, auth = "guest") => {
+    let routes = [];
     configs.forEach(config => {
-        allRoutes = [...allRoutes, ...config.routes]
+        if (config.auth.find(ele => ele === auth))
+            routes = [...routes, ...config.routes]
     });
-    return allRoutes;
+    return routes;
 }
