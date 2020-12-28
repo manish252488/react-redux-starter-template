@@ -1,8 +1,7 @@
-export const generateRoutesFromConfigs = (configs, role) => {
+export const generateRoutesFromConfigs = (configs) => {
     let allRoutes = [];
     configs.forEach(config => {
-        if (role === config.auth)
-            allRoutes = [...allRoutes, ...config.routes]
+        allRoutes = [...allRoutes, ...config.routes]
     });
     return allRoutes;
 }
